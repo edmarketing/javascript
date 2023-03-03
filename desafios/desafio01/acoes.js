@@ -6,3 +6,4 @@ function acao2() {
 }
 function acao3() {
     window.alert('Você clicou no 3º botão')
+}
