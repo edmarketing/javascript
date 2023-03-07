@@ -20,10 +20,11 @@
     <h1>Olá, Mundo</h1>
     <p>Me livrei da maldição</p>
     <script>
-       var n1 = Number.parseInt(window.prompt('Digite o primeiro número: ')) //No prompt retorna uma string como resultado
-        var n2 = Number.parseInt(window.prompt('Digite outro número: ')) //No prompt retorna uma string como resultado
+       var n1 = Number(window.prompt('Digite um número: ')) //No prompt retorna uma string como resultado
+        var n2 = Number(window.prompt('Digite outro número: ')) //No prompt retorna uma string como resultado
         var s = n1 + n2
-        window.alert('A soma dos valores é '+ s)
+       // window.alert('A soma entre ${n1} e ${n2} é igual a ${s}')
+        window.alert('A soma entre ${n1} e ${n2} é igual a ${s}')
     </script>
 </body>
 
