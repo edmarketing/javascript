@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    País de Nascimento: <input type="txt" name="txtpais" id="txtpais" >
+    <input type="button" value="Confirmar" onclick="mostrar()">
+    <div id = "nac">        
+    </div>
+    <script>
+        function mostrar(){
+            var txtv = window.document.querySelector('input#txtpais')
+            var nac = window.document.querySelector('div#nac')
+            var pais = String(txtv.value)
+            nac.innerHTML = `<p>Você nasceu no ${pais}.</p>`
+            if (pais == 'Brasil'){
+                nac.innerHTML += '<p>Você é brasileiro!</p>'                
+            }else {
+                nac.innerHTML += '<p>Você é estrangeiro!</p>'
+            }  
+        }
+
+    </script>
+
+</body>
+</html>

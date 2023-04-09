@@ -4,7 +4,7 @@ let res = document.querySelector('section#result')
 
 function contar() {
   contador ++ // É a mesma coisa que contador = contador + 1 
-  res.innerHTML = '<p>O contador está com <mark>${contador}</mark> cliques.</p>'
+  res.innerHTML = `<p>O contador está com ${contador} cliques.</p>`
 }
 
 function zerar() {
