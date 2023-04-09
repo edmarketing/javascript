@@ -28,10 +28,14 @@
         function inicio() {
             let produto = (window.prompt('Qual produto está comprando: '))
             let valor = Number(window.prompt(`Quanto custa ${produto} que está comprando: `))
+            valorForm = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             let valor1 = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+            valor1Form = valor1.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            troco = valor1-valor
+            trocoForm = troco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             let res = document.querySelector('section#res')
-            res.innerHTML = `<p>Você comprou ${produto} que custou R$ ${valor}. Deu em dinheiro R$ ${valor1} e vai receber R$ ${(valor1-valor)} de troco. Volte Sempre!</p>`
-        }
+            res.innerHTML = `<p>Você comprou ${produto} que custou ${valorForm}. Deu em dinheiro ${valor1Form} e vai receber ${trocoForm} de troco. Volte Sempre!</p>`            
+	    }
     </script>
     
 </body>
