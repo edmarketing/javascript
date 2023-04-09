@@ -27,8 +27,10 @@
     <script>     
         function inicio() {
             let produto = (window.prompt('Qual produto está comprando: '))
+            let valor = Number(window.prompt(`Quanto custa ${produto} que está comprando: `))
+            let valor1 = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
             let res = document.querySelector('section#res')
-            res.innerHTML = `<p>Antes do número ${n1} é ${n1-1} e depois é ${n1+1}!</p>`
+            res.innerHTML = `<p>Você comprou ${produto} que custou R$ ${valor}. Deu em dinheiro R$ ${valor} e vai receber R$ ${(valor1-valor)} de troco. Volte Sempre!</p>`
         }
     </script>
     
