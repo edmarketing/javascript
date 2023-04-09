@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio da Calculadora de troco</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;  
+        }
+    </style>
 </head>
 <body>
     <h1>Calculando o troco</h1>
-    window.prompt('Digite um número inteiro qualquer: ')
+    <button onclick="inicio()">Comprar Produto</button>
+    <section id="res">
+        <p>O resultado vem aqui...</p>
+    </section>
+
+    <script>     
+        function inicio() {
+            let produto = (window.prompt('Qual produto está comprando: '))
+            let res = document.querySelector('section#res')
+            res.innerHTML = `<p>Antes do número ${n1} é ${n1-1} e depois é ${n1+1}!</p>`
+        }
+    </script>
+    
 </body>
 </html>
