@@ -7,9 +7,24 @@
     <title>Converter metros em Kilometros</title>
 </head>
 <body>
+    
     <script>
-        let metro = parseInt(prompt("Informe a quantidade de metros a converter:"));
+        let metro1 = prompt("Informe a quantidade de metros a converter:");
+        var texto =  "A distância de " + metro1 + " metros, correspondente a..."
+        let metro = parseInt(metro1);
+        var resultado = texto.bold();
+        document.write(resultado + "<br/>")
         let result = (metro*1)/1000;
-        document.write(metro + " metros convertido a kilômetros é: " + result + " kilômetros.")
+        document.write( result + " kilômetros (Km)" + "<br/>" )
+        let result1 = (metro*1)/100;
+        document.write(result1 + " hectômetros (Hm)" + "<br/>")
+        let result2 = (metro*1)/10;
+        document.write(result2 + " decâmetros (Dam)" + "<br/>")
+        let result3 = (metro*1)/0.1;
+        document.write(result3 + " decimetros (dm)" + "<br/>")
+        let result4 = (metro*1)/0.01;
+        document.write(result4 + " centímetros (cm)" + "<br/>")
+        let result5 = (metro*1)/0.001;
+        document.write(result5 + " milímetros (mm)")
     </script>
  </html>
