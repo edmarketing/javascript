@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Conversor de temperatura</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <button onclick="inicio()">Converter</button><br>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <script>        
+        function inicio(){
+            let temp = Number(window.prompt('Digite uma temperatura em °C (Celsius) '))
+            let res = document.getElementById('resultado')
+            let far = (1.8*temp)+32
+            let kel = temp + 273.15
+            //let kel = kel.toFixed(2)
+            res.innerHTML = `<p><strong>A temperatura ${temp}°C corresponde a ...</strong></p>` 
+            res.innerHTML += `<p>${kel}°K (Kelvin)</p>` 
+           //res.innerHTML += `<p>${(1.8*temp)+32}°F (Farenheit)</p>`
+           res.innerHTML += `<p>${far}°F (Farenheit)</p>`            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Conversor de Medidas</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="inicio()">Converter</button><br>
+    <section id="res">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <script>        
+        function inicio(){
+            let distancia = (window.prompt('Digite a distância em metros (m) '))
+            var texto =  "A distância de " + distancia + " metros, correspondente a..."
+            let metro = parseInt(distancia);
+            var resultado = texto.bold();
+            document.write(resultado + "<br/>")
+            let result = (metro*1)/1000;
+            document.write( result + " kilômetros (Km)" + "<br/>" )
+            let result1 = (metro*1)/100;
+            document.write(result1 + " hectômetros (Hm)" + "<br/>")
+            let result2 = (metro*1)/10;
+            document.write(result2 + " decâmetros (Dam)" + "<br/>")
+            let result3 = (metro*1)/0.1;
+            document.write(result3 + " decimetros (dm)" + "<br/>")
+            let result4 = (metro*1)/0.01;
+            document.write(result4 + " centímetros (cm)" + "<br/>")
+            let result5 = (metro*1)/0.001;
+            document.write(result5 + " milímetros (mm)")   
+        }
+    </script>
+</body>
+</html>
