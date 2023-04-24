@@ -28,10 +28,9 @@
         function inicio(){
             let temp = Number(window.prompt('Digite uma temperatura em °C (Celsius) '))
             let res = document.getElementById('resultado')
+            res.innerHTML = `<p><strong>A temperatura ${temp}°C corresponde a ...</strong></p>` 
             let far = (1.8*temp)+32
             let kel = temp + 273.15
-            //let kel = kel.toFixed(2)
-            res.innerHTML = `<p><strong>A temperatura ${temp}°C corresponde a ...</strong></p>` 
             res.innerHTML += `<p>${kel}°K (Kelvin)</p>` 
            //res.innerHTML += `<p>${(1.8*temp)+32}°F (Farenheit)</p>`
            res.innerHTML += `<p>${far}°F (Farenheit)</p>`            
