@@ -21,28 +21,27 @@
 <body>
     <h1>Conversor de Medidas</h1>
     <button onclick="inicio()">Converter</button><br>
-    <section id="res">
+    <section id="resultado">
         <p>Clique no botão acima para iniciar.</p>
     </section>
     <script>        
         function inicio(){
-            let distancia = (window.prompt('Digite a distância em metros (m) '))
-            var texto =  "A distância de " + distancia + " metros, correspondente a..."
-            let metro = parseInt(distancia);
-            var resultado = texto.bold();
-            document.write(resultado + "<br/>")
-            let result = (metro*1)/1000;
-            document.write( result + " kilômetros (Km)" + "<br/>" )
-            let result1 = (metro*1)/100;
-            document.write(result1 + " hectômetros (Hm)" + "<br/>")
-            let result2 = (metro*1)/10;
-            document.write(result2 + " decâmetros (Dam)" + "<br/>")
-            let result3 = (metro*1)/0.1;
-            document.write(result3 + " decimetros (dm)" + "<br/>")
-            let result4 = (metro*1)/0.01;
-            document.write(result4 + " centímetros (cm)" + "<br/>")
-            let result5 = (metro*1)/0.001;
-            document.write(result5 + " milímetros (mm)")   
+            let distancia = Number(window.prompt('Digite a distância em metros (m) '))
+            let res = document.getElementById('resultado') 
+            let metro = parseFloat(distancia);
+            res.innerHTML = `<p><strong>A distância de ${distancia.toLocaleString('pt-BR', { style: 'decimal'})} metros  corresponde a...</strong></p>`
+            let result = (metro)/1000;
+            res.innerHTML += `<p>${result.toLocaleString('pt-BR', { style: 'decimal'})} kilômetros (Km)</p>`
+            let result1 = (metro)/100;
+            res.innerHTML += `<p>${result1.toLocaleString('pt-BR', { style: 'decimal'})} hectômetros (Hm)</p>`
+            let result2 = (metro)/10;
+            res.innerHTML += `<p>${result2.toLocaleString('pt-BR', { style: 'decimal'})} decâmetros (Dam)</p>`
+            let result3 = (metro)/0.1;
+            res.innerHTML += `<p>${result3.toLocaleString('pt-BR', { style: 'decimal'})} decímetros (dm)</p>`
+            let result4 = (metro)/.010;
+            res.innerHTML += `<p>${result4.toLocaleString('pt-BR', { style: 'decimal'})} centímetros (cm)</p>`
+            let result5 = (metro)/0.001;
+            res.innerHTML += `<p>${result5.toLocaleString('pt-BR', { style: 'decimal'})} milímetros (mm)</p>`
         }
     </script>
 </body>
