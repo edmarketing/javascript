@@ -20,10 +20,19 @@
 </head>
 <body>
     <script>
-        function inicio() {
-                let dolar = window.prompt ('Antes de mais nada. Quanto está a cotação do dolar agora? ')
-                let Valdolar =  dolar
+        let dolar = window.prompt ('Antes de mais nada. Quanto está a cotação do dolar agora? ')
+        let Valdolar =  dolar
+    </script>
+    <script>
+        <h1>Conversor de  R$ -> US$</h1>
+        <button onclick="inicio()">Converter</button><br>
+        <section id="resultado">
+             <p>Clique no botão acima para iniciar.</p>
+        </section>
      
-   
+        let real = window.prompt ('Quantos R$ você tem na carteira? ')
+        let Valreal =  real 
+        window.alert(`Você vai conseguir comprar ${Valreal/Valdolar} com ${Valreal} que você tem na carteira.`)
+    </script>
 </body>
 </html>
