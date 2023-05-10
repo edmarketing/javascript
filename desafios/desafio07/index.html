@@ -19,20 +19,24 @@
     </style>
 </head>
 <body>
+    <h1>Conversor de  R$ -> US$</h1>
+    <button onclick="inicio()">Converter</button><br>
+    <section id="res">
+         <p>Clique no botão acima para iniciar.</p>
+    </section>
     <script>
         let dolar = window.prompt ('Antes de mais nada. Quanto está a cotação do dolar agora? ')
         let Valdolar =  dolar
-    </script>
-    <script>
-        <h1>Conversor de  R$ -> US$</h1>
-        <button onclick="inicio()">Converter</button><br>
-        <section id="resultado">
-             <p>Clique no botão acima para iniciar.</p>
-        </section>
-     
-        let real = window.prompt ('Quantos R$ você tem na carteira? ')
-        let Valreal =  real 
-        window.alert(`Você vai conseguir comprar ${Valreal/Valdolar} com ${Valreal} que você tem na carteira.`)
+        function inicio(){
+            let real = window.prompt ('Quantos R$ você tem na carteira? ')
+             let Valreal =  real
+            let ValUS =  Valreal/Valdolar
+            //let valorFormatReal = Valreal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            //let valorFormatUS = ValUS.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            let res = document.querySelector('section#res')
+          //  res.innerHTML = `<p>Você vai conseguir comprar ${ValUS.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} com ${Valreal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} que você tem na carteira.</p>`)
+           // window.alert = 'Você vai conseguir comprar US$' + valorFormatUS + ' com R$' + valorFormatReal + ' que você tem na carteira.')
+        }       
     </script>
 </body>
 </html>
