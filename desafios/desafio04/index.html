@@ -31,9 +31,9 @@
             let valor = Number(window.prompt(`Quanto custa ${produto} que está comprando: `))
             let valorForm = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             let valor1 = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
-            let valor1Form = valor1.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let valor1Form = valor1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL' });
             let troco = valor1-valor
-            let trocoForm = troco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let trocoForm = troco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL' });
             let res = document.querySelector('section#res')
             res.innerHTML = `<p>Você comprou ${produto} que custou ${valorForm}. </p>`
             res.innerHTML += `<p>Deu em dinheiro ${valor1Form}, </p>`

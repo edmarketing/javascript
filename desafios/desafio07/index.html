@@ -31,12 +31,11 @@
             let real = window.prompt ('Quantos R$ você tem na carteira? ')
              let Valreal =  real
             let ValUS =  Valreal/Valdolar
-            //let valorFormatReal = Valreal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-            //let valorFormatUS = ValUS.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            let valorFormatReal = Valreal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            let valorFormatUS = ValUS.toLocaleString('pt-BR', { style: 'currency', currency: 'USD' })
             let res = document.querySelector('section#res')
-          //  res.innerHTML = `<p>Você vai conseguir comprar ${ValUS.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} com ${Valreal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} que você tem na carteira.</p>`)
-           // window.alert = 'Você vai conseguir comprar US$' + valorFormatUS + ' com R$' + valorFormatReal + ' que você tem na carteira.')
-        }       
+            res.innerHTML = `<p>Você vai conseguir comprar ${valorFormatUS} com R$${valorFormatReal} que você tem na carteira.</p>`
+         }       
     </script>
 </body>
 </html>
