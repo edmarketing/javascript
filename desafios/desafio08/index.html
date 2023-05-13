@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="Inicio()">Desconto de 10%</button>
+    <section id="res">
+        <p>Clique no botão acima para iniciar.</p>
+   </section>
+   <script>
+        function Inicio() {
+            let prod = (window.prompt('Qual é o produto que você está comprando?'))
+            let valor = Number(window.prompt(`Qual é o preço do  ${prod}? `))
+            let res = document.querySelector('section#res')
+            let desc = valor * 0.10
+            let valDesc = valor - desc
+            let valorForm = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let valorDesc = desc.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let valorFinal = valDesc.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                      
+            res.innerHTML = `<p><strong>Calculando desconto de 10% para  ${prod} .</strong> </p>`
+            res.innerHTML += `<p>O preço original era  ${valorForm} </p>`
+            res.innerHTML += `<p>Você acaba de ganhar  ${valorDesc} de desconto(-10%). </p>`
+            res.innerHTML += `<p>Você vai pagar  ${valorFinal} no produto ${prod}. </p>`
+        }
+   </script>
+</body>
+</html>

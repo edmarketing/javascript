@@ -26,8 +26,8 @@
     </section>
 
     <script>     
-        function inicio() {
-            let produto = (window.prompt('Qual produto está comprando: '))
+        function inicio() { 
+           let produto = (window.prompt('Qual produto está comprando: '))
             let valor = Number(window.prompt(`Quanto custa ${produto} que está comprando: `))
             let valorForm = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             let valor1 = Number(window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
