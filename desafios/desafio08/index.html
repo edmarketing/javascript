@@ -26,7 +26,7 @@
    </section>
    <script>
         function Inicio() {
-            let prod = (window.prompt('Qual é o produto que você está comprando?'))
+            let prod = window.prompt('Qual é o produto que você está comprando?')
             let valor = Number(window.prompt(`Qual é o preço do  ${prod}? `))
             let res = document.querySelector('section#res')
             let desc = valor * 0.10

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Reajustar salário</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="Inicio()">Reajustar Salário</button>
+    <section id="res">
+        <p>Clique no botão acima para iniciar.</p>
+   </section>
+   <script>
+        function Inicio() {
+            let nome = window.prompt('Qual o nome do funcionário?')
+            let sal = Number(window.prompt(`Qual o salário do ${nome}?`))
+            let perc = window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+          
+            let percent = perc/100
+            let aumento = sal * percent
+            let newsal = sal + aumento
+            let res = document.querySelector('section#res')
+
+            let salForm = sal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let aumentoForm = aumento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let salFinal = newsal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            res.innerHTML = `<p><strong>${nome} recebeu um aumento salarial! </strong> </p>`
+            res.innerHTML +=  `<p>O salário atual era ${salForm}.</p>`
+            res.innerHTML += `<p>Com o aumento de ${perc}% seu salário vai aumentar ${aumentoForm} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar ${salFinal}.</p>`
+        }
+   </script>
+</body>
+</html>
