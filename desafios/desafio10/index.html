@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Resolvendo Bhaskara</h1>
+        <button onclick="Calcular()">Calcular</button>
+        <section id="res">
+            <p>Considerando uma equação ax² + bx + c = 0,<br> aperte o botão acima para calcular o valor de [delta].</p>
+        </section>
+        <script>
+            function Calcular(){
+                let  valA = window.prompt('Qual é o valor de a?')
+                let  valB = window.prompt('Qual é o valor de b?')
+                let  valC = window.prompt('Qual é o valor de c?')
+
+                let res = document.querySelector('section#res')
+
+                res.innerHTML += `<p>O valor de a é  ${valA}</p>`
+                res.innerHTML += `<p>O valor de b é  ${valB}</p>`
+                res.innerHTML += `<p>O valor de c é  ${valC}</p>`
+
+            }
+        </script>
+</body>
+</html>
