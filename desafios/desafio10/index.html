@@ -25,16 +25,21 @@
             <p>Considerando uma equação ax² + bx + c = 0,<br> aperte o botão acima para calcular o valor de [delta].</p>
         </section>
         <script>
-            function Calcular(){
+            function Calcular(){ 
                 let  valA = window.prompt('Qual é o valor de a?')
                 let  valB = window.prompt('Qual é o valor de b?')
                 let  valC = window.prompt('Qual é o valor de c?')
 
                 let res = document.querySelector('section#res')
+                
+                res.innerHTML = `<p><strong>Resolvendo Bhaskara</strong></p>`
 
-                res.innerHTML += `<p>O valor de a é  ${valA}</p>`
-                res.innerHTML += `<p>O valor de b é  ${valB}</p>`
-                res.innerHTML += `<p>O valor de c é  ${valC}</p>`
+                res.innerHTML += `<p>A equação é <strong> ${valA}x² +  ${valB}x +  ${valC} = 0</strong></p>` 
+                res.innerHTML += `<p>O cálculo realizado será  <strong>DELTA = ${valB}² -  4 . ${valA} .  ${valC}</strong></p>` 
+                let  Delta = (valB*valB) - (4 * valA * valC)
+                res.innerHTML += `<p>O valor calculado foi  <strong>DELTA = ${Delta}</strong></p>`
+                //res.innerHTML += `<p>O valor de b é  ${valB}</p>`
+                //res.innerHTML += `<p>O valor de c é  ${valC}</p>`
 
             }
         </script>
