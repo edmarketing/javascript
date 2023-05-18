@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Ano Bissexto</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+        <button onclick="Verifica()">Verificar</button>
+        <section id="res">
+            <p>Click no botão acima e Informe um ano para saber se ele é bissexto.</p>
+        </section>
+        <script>
+             function Verifica(){ 
+                    let ano = Number(window.prompt('Qual o ano que você quer verificar?'))
+
+                    let res = document.querySelector('section#res')
+
+                    if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0))){             
+                        res.innerHTML = `<h2> Analisando o ano  de ${ano}... </h2>` 
+                         res.innerHTML += `<p> O ano de ${ano} <strong><mark> É BISSEXTO </mark></strong></p>` 
+                    
+                        
+                 }else  {
+                        res.innerHTML = `<h2> Analisando o ano  de ${ano}... </h2>` 
+                         res.innerHTML += `<p> O ano de ${ano} <strong> <mark>NÃO É BISSEXTO</mark> </strong></p>`  
+                }                
+               // res.innerHTML = `<p><strong>Resolvendo Bhaskara</strong></p>`
+
+                //res.innerHTML += `<p>A equação é <strong> ${valA}x² +  ${valB}x +  ${valC} = 0</strong></p>` 
+             }
+        </script>
+    
+</body>
+</html>
