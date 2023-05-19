@@ -22,38 +22,33 @@
     <h1>Situação do aluno</h1>
         <button onclick="Verifica()">Entrar com as notas</button>
         <section id="res">
-            <p>Click no botão acima para analisar a mudança de preço.</p>
+            <p>Click no botão acima para informar o nome e a nota do aluno.</p>
         </section>
         <script>
              function Verifica(){ 
                     let nome = window.prompt('Qual é o nome do aluno?')                
-                    let nota1 = Number(window.prompt('Primeira nota de ${nome}'))
-                    let nota2 = Number(window.prompt('Primeira nota de ${nome}'))
+                    let nota1 = Number(window.prompt(`Primeira nota de ${nome}`))
+                    let nota2 = Number(window.prompt(`Segunda nota de ${nome}`))
                                       
-                //   let preçoAntForm = preçoAnt.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                 //  let preçoAtualForm = preçoAtual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                                       
+                    let media = (nota1+nota2)/2   
+                    let mediaForm = media.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
+                    let nota1Form = nota1.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
+                    let nota2Form = nota2.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
+ 
+                    let res = document.querySelector('section#res')
 
-                 let res = document.querySelector('section#res')
+                    res.innerHTML = `<h2> Analisando a situação de ${nome}. </h2>` 
+                    res.innerHTML += `<p> Com as notas ${nota1Form} e ${nota2Form}, <strong>a média é ${mediaForm})</strong></p>`
 
-                    res.innerHTML = `<h2> Analisando s... </h2>` 
-                    res.innerHTML += `<p> O produto custava R$ ${preçoAntForm} e agora custa R$ ${preçoAtualForm}.</p>`
-
-                   if (preçoAtual > preçoAnt){          
-                          res.innerHTML +=`<p>Hoje o produto está mais caro.</p>`
-                          res.innerHTML += `<p>O preço subiu R$ ${(preçoAtual-preçoAnt).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, em relação ao preço anterior.</p>`
-                          let variaPreço = ((preçoAtual-preçoAnt)/preçoAnt)*100
-                          let variaPreçoForm = variaPreço.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
-                          res.innerHTML += `<p>Uma variação de ${variaPreçoForm}% para cima.</p>` 
-                                               
-                   }else  {
-                        res.innerHTML +=`<p>Hoje o produto está mais barato.</p>`
-                        res.innerHTML += `<p>O preço caiu R$ ${(preçoAnt-preçoAtual).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, em relação ao preço anterior.</p>`
-                        let  variaPreço = ((preçoAnt-preçoAtual)/preçoAnt)*100
-                        let variaPreçoForm = variaPreço.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
-                        res.innerHTML += `<p>Uma variação de ${variaPreçoForm}% para baixo.</p>` 
-                    }                
-                }
+                   if (media > 6.0) {          
+                          res.innerHTML += `<p>Com média acima de 6,0, o aluno está <mark><STRONG>APROVADO</mark></STRONG> .</p>`
+                                                                        
+                   }else if (media < 6.1 && media >2.9) {
+                        res.innerHTML += `<p>Com média entre 3,0 e 6,0, o aluno está em <mark style="background-color:#DAF7A6;"><STRONG>RECUPERAÇÃO</mark></STRONG> .</p>`
+                   }else{
+                        res.innerHTML += `<p>Com média abaixo de 3,0, o aluno está <mark style="background-color:#C70039;"><STRONG>REPROVADO</mark></STRONG> .</p>`  
+                  }                
+                } 
         </script>
     
 </body>
