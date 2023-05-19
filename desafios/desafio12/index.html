@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon/logoejm.ico" type="image/x-icon">
+    <title>Preço Mudou</title>
+    <style>
+        body { 
+            font: 12pt Arial; 
+        }
+        button { 
+            font-size: 12pt;
+            border-radius: 10px;
+            font-weight:bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+        <button onclick="Verifica()">Verificar</button>
+        <section id="res">
+            <p>Click no botão acima para analisar a mudança de preço.</p>
+        </section>
+        <script>
+             function Verifica(){ 
+                    let preçoAnt = Number(window.prompt('Qual era o preço anterior do produto?'))
+                    let preçoAtual = Number(window.prompt('Qual é o preço atual do produto?'))
+                                      
+                   let preçoAntForm = preçoAnt.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                   let preçoAtualForm = preçoAtual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                                       
+                    let res = document.querySelector('section#res')
+
+                    res.innerHTML = `<h2> Analisando os preços informados... </h2>` 
+                    res.innerHTML += `<p> O produto custava R$ ${preçoAntForm} e agora custa R$ ${preçoAtualForm}.</p>`
+
+                   if (preçoAtual > preçoAnt){          
+                          res.innerHTML +=`<p>Hoje o produto está mais caro.</p>`
+                          res.innerHTML += `<p>O preço subiu R$ ${(preçoAtual-preçoAnt).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, em relação ao preço anterior.</p>`
+                          let variaPreço = ((preçoAtual-preçoAnt)/preçoAnt)*100
+                          let variaPreçoForm = variaPreço.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
+                          res.innerHTML += `<p>Uma variação de ${variaPreçoForm}% para cima.</p>` 
+                                               
+                   }else  {
+                        res.innerHTML +=`<p>Hoje o produto está mais barato.</p>`
+                        res.innerHTML += `<p>O preço caiu R$ ${(preçoAnt-preçoAtual).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, em relação ao preço anterior.</p>`
+                        let  variaPreço = ((preçoAnt-preçoAtual)/preçoAnt)*100
+                        let variaPreçoForm = variaPreço.toLocaleString('pt-BR', { style: 'decimal', currency: 'BRL' });
+                        res.innerHTML += `<p>Uma variação de ${variaPreçoForm}% para baixo.</p>` 
+                    }                
+                }
+        </script>
+    
+</body>
+</html>

@@ -30,8 +30,7 @@
             let sal = Number(window.prompt(`Qual o salário do ${nome}?`))
             let perc = window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
           
-            let percent = perc/100
-            let aumento = sal * percent
+            let aumento = sal * (perc/100)
             let newsal = sal + aumento
             let res = document.querySelector('section#res')
 
