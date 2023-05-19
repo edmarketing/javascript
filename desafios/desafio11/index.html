@@ -16,9 +16,6 @@
             font-weight:bold;
             padding: 15px;
         }
-        span {
-            color: rgb(46, 46, 29);
-        }
     </style>
 </head>
 <body>
@@ -35,14 +32,11 @@
 
                     if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0))){             
                         res.innerHTML = `<h2> Analisando o ano  de ${ano}... </h2>` 
-                         //let $res = res.innerHTML += `<p> O ano de ${ano} <strong><span> É BISSEXTO </span></strong></p>` 
-                         let str = valor.replace(termo, "<span class='AlteraCor'>" + termo + "</span>")
-
-                        document.getElementById('result').innerHTML = str;
-                        
+                        res.innerHTML += `<p> O ano de ${ano} <strong><mark> É BISSEXTO </mark>&#x2705</strong></p>` 
+                                               
                     }else  {
                         res.innerHTML = `<h2> Analisando o ano  de ${ano}... </h2>` 
-                         res.innerHTML += `<p> O ano de ${ano} <strong> <mark>NÃO É BISSEXTO</mark> </strong></p>`  
+                         res.innerHTML += `<p> O ano de ${ano} <strong> <mark style="background-color:chocolate;">NÃO É BISSEXTO</mark>&#x274C </strong></p>`  
                     }                
                 }
         </script>
